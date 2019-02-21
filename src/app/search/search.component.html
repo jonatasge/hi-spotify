@@ -1,0 +1,16 @@
+<app-bg-animation>
+  <img class="logo" src="../../assets/images/logo.png" />
+
+  <mat-card class="content-search-input">
+    <mat-form-field>
+      <mat-select>
+        <mat-option *ngFor="let option of searchOptions | async">
+          {{ option }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput />
+    </mat-form-field>
+  </mat-card>
+</app-bg-animation>

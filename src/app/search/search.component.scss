@@ -1,0 +1,23 @@
+app-bg-animation {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.logo {
+    margin-bottom: 40px;
+    width: 220px;
+}
+
+.content-search-input {
+    border-radius: 100px;
+    padding: 5px;
+
+    mat-search-form {
+        .mat-form-field-wrapper {
+            padding-bottom: 0;
+        }
+    }
+}
