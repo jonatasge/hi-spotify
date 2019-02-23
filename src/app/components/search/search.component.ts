@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Select } from '../interfaces/select';
+import { Select } from '../../interfaces/select';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  @Input() Select?: Select[];
+  @Input() searchOptions?: Select[];
   selectedOption: string;
   submitted = false;
 
@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   }
 
   getSelectedOption() {
-    this.Select.forEach(option => {
+    this.searchOptions.forEach(option => {
       if (option.selected) {
         this.selectedOption = option.value;
       }
