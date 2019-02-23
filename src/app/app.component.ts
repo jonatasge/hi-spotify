@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchOptions } from './interfaces/select';
+import { Select } from './interfaces/select';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import { SearchOptions } from './interfaces/select';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  searchOptions: SearchOptions[] = [
+  searchOptions: Select[] = [
     { value: 'artist', label: 'Artista' },
     { value: 'album', label: 'Álbum' },
     { value: 'track', label: 'Faixa', selected: true }
