@@ -1,4 +1,4 @@
-export interface SearchOptions {
+export interface Select {
     value: string;
     label: string;
     selected?: boolean;
