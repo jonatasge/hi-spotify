@@ -1,16 +1,33 @@
 <app-bg-animation>
   <img class="logo" src="../../assets/images/logo.png" />
 
-  <mat-card class="content-search-input">
-    <mat-form-field>
-      <mat-select>
-        <mat-option *ngFor="let option of searchOptions | async">
-          {{ option }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput />
-    </mat-form-field>
-  </mat-card>
+  <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+    <mat-card class="content-search-fields">
+      <div class="custom-select">
+        <mat-form-field class="custom-mat-form-field">
+          <mat-select [(value)]="selectedOption">
+            <mat-option
+              *ngFor="let option of searchOptions"
+              [value]="option.value"
+              name="searchType"
+            >
+              {{ option.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="custom-input">
+        <mat-form-field class="custom-mat-form-field">
+          <input matInput required name="searchText" />
+        </mat-form-field>
+      </div>
+
+      <div class="custom-button">
+        <button mat-button type="submit">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+    </mat-card>
+  </form>
 </app-bg-animation>

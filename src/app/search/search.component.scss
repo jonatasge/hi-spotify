@@ -1,23 +1,60 @@
+@import "variables";
+
 app-bg-animation {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .logo {
-    margin-bottom: 40px;
-    width: 220px;
+  margin-bottom: 40px;
+  width: 220px;
 }
 
-.content-search-input {
-    border-radius: 100px;
-    padding: 5px;
+.content-search-fields {
+  border-radius: 100px;
+  padding: 0 7px 0 0;
+  overflow: hidden;
 
-    mat-search-form {
-        .mat-form-field-wrapper {
-            padding-bottom: 0;
-        }
+  .custom-select {
+    background-color: #f0f0f0;
+    color: #ffffff !important;
+    float: left;
+    padding: 10px 5px 10px 15px;
+
+    .custom-mat-form-field {
+      width: 70px;
     }
+  }
+
+  .custom-input {
+    float: left;
+    margin-left: 10px;
+
+    .custom-mat-form-field input {
+      height: 38px;
+
+      @media screen and (min-width: $min-xsmall-4) {
+        width: 300px;
+      }
+
+      @media screen and (min-width: $min-small-2) {
+        width: 500px;
+      }
+    }
+  }
+
+  .custom-button {
+    float: left;
+    padding: 5px 0;
+
+    button {
+      border-radius: 100%;
+      height: 40px;
+      min-width: 40px;
+      padding: 0 0 2px 2px;
+    }
+  }
 }
