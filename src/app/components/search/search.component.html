@@ -1,15 +1,18 @@
 <app-bg-animation>
   <img class="logo" src="../../assets/images/logo.png" />
 
-  <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+  <form method="GET" (ngSubmit)="submitForm()" [formGroup]="searchForm">
     <mat-card class="content-search-fields">
       <div class="custom-select">
         <mat-form-field class="custom-mat-form-field">
-          <mat-select [(value)]="selectedOption">
+          <mat-select
+            id="searchType"
+            name="searchType"
+            formControlName="searchType"
+          >
             <mat-option
               *ngFor="let option of searchOptions"
               [value]="option.value"
-              name="searchType"
             >
               {{ option.label }}
             </mat-option>
@@ -19,7 +22,12 @@
 
       <div class="custom-input">
         <mat-form-field class="custom-mat-form-field">
-          <input matInput required name="searchText" />
+          <input
+            matInput
+            id="searchText"
+            name="searchText"
+            formControlName="searchText"
+          />
         </mat-form-field>
       </div>
 

@@ -12,4 +12,6 @@ export class AppComponent {
     { value: 'album', label: 'Álbum' },
     { value: 'track', label: 'Faixa', selected: true }
   ];
+
+  searchSubmit(response: any) {}
 }

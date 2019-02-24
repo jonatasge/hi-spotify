@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { Select } from '../../interfaces/select';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -8,23 +9,34 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+  constructor(private formBuilder: FormBuilder) {}
+
   @Input() searchOptions?: Select[];
-  selectedOption: string;
-  submitted = false;
+  searchForm: FormGroup;
+  @Output() searchSubmit = new EventEmitter();
 
   ngOnInit() {
-    this.getSelectedOption();
+    this.configForm();
   }
 
-  getSelectedOption() {
-    this.searchOptions.forEach(option => {
-      if (option.selected) {
-        this.selectedOption = option.value;
-      }
+  configForm() {
+    this.searchForm = this.formBuilder.group({
+      searchType: [this.getSelectedOption(), Validators.required],
+      searchText: [null, Validators.required]
     });
   }
 
-  onSubmit(f: NgForm) {
-    this.submitted = true;
+  getSelectedOption() {
+    let selectedOption;
+    this.searchOptions.forEach(option => {
+      if (option.selected) {
+       selectedOption  = option.value;
+      }
+    });
+    return selectedOption;
+  }
+
+  submitForm() {
+    this.searchSubmit.emit(this.searchForm.value);
   }
 }
