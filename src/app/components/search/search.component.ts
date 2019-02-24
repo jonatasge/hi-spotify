@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { Select } from '../../interfaces/select';
+import { Select } from '../../interfaces/Select.interface';
 
 @Component({
   selector: 'app-search',
