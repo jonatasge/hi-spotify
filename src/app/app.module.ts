@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 // ANGULAR - MATERIAL
 import {
@@ -23,6 +24,9 @@ import { AppComponent } from './app.component';
 // OTHERS COMPONENTS
 import { BgAnimationComponent } from './components/bg-animation/bg-animation.component';
 import { SearchComponent } from './components/search/search.component';
+// SERVICES
+import { SpotifyService } from './services/spotify.service';
+
 @NgModule({
   declarations: [AppComponent, SearchComponent, BgAnimationComponent],
   imports: [
@@ -34,9 +38,10 @@ import { SearchComponent } from './components/search/search.component';
     MatSelectModule,
     MatButtonModule,
     ReactiveFormsModule,
+    HttpClientModule,
     ConfigModule.forRoot(environment)
   ],
-  providers: [],
+  providers: [SpotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
