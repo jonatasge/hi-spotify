@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Select } from './interfaces/Select.interface';
+import { Select } from './interfaces/select.interface';
 
 @Component({
   selector: 'app-root',
