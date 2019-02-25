@@ -1,47 +1,57 @@
 :host {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
+  background: radial-gradient(circle, #1ed760, #1ed760, #00aaff);
+  background-size: 1000% 1000%;
   display: inline-block;
   height: auto;
   width: 100vw;
 
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
+  -webkit-animation: bgAnimation 60s ease-in-out infinite;
+  -moz-animation: bgAnimation 60s ease-in-out infinite;
+  -o-animation: bgAnimation 60s ease-in-out infinite;
+  animation: bgAnimation 60s ease-in-out infinite;
 }
 
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
+@-webkit-keyframes bgAnimation {
+  25% {
+    background-position: 0 100%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 100% 100%;
   }
-  100% {
-    background-position: 0% 50%;
+  75% {
+    background-position: 100% 0;
   }
 }
-
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
+@-moz-keyframes bgAnimation {
+  25% {
+    background-position: 0 100%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 100% 100%;
   }
-  100% {
-    background-position: 0% 50%;
+  75% {
+    background-position: 100% 0;
   }
 }
-
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
+@-o-keyframes bgAnimation {
+  25% {
+    background-position: 0 100%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 100% 100%;
   }
-  100% {
-    background-position: 0% 50%;
+  75% {
+    background-position: 100% 0;
+  }
+}
+@keyframes bgAnimation {
+  25% {
+    background-position: 0 100%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 100% 0;
   }
 }
