@@ -1,4 +1,4 @@
-export interface Endpoint {
+export interface EndpointQuery {
     url?: string;
     path?: string | number;
     parameters?: object;
