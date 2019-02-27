@@ -10,7 +10,8 @@ import {
   MatCardModule,
   MatInputModule,
   MatSelectModule,
-  MatButtonModule
+  MatButtonModule,
+  MatSnackBarModule
 } from '@angular/material';
 
 // VENDORS
@@ -25,7 +26,9 @@ import { AppComponent } from './app.component';
 import { BgAnimationComponent } from './components/bg-animation/bg-animation.component';
 import { SearchComponent } from './components/search/search.component';
 // SERVICES
-import { SpotifyService } from './services/spotify.service';
+import { SpotifyConfigService } from './services/spotify/spotify-config.service';
+import { SpotifyAuthenticateService } from './services/spotify/spotify-authenticate.service';
+import { SpotifyService } from './services/spotify/spotify.service';
 import { HelpService } from './services/helpers/help.service';
 import { ObjectService } from './services/helpers/object.service';
 import { UrlService } from './services/helpers/url.service';
@@ -43,11 +46,16 @@ import { UrlService } from './services/helpers/url.service';
     ReactiveFormsModule,
     HttpClientModule,
     ConfigModule.forRoot(environment),
+    MatSnackBarModule
+  ],
+  providers: [
+    SpotifyConfigService,
+    SpotifyAuthenticateService,
+    SpotifyService,
     HelpService,
     ObjectService,
     UrlService
   ],
-  providers: [SpotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

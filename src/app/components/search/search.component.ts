@@ -12,6 +12,7 @@ export class SearchComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   @Input() searchOptions?: Select[];
+  @Input() searchResults?: any;
   searchForm: FormGroup;
   @Output() searchSubmit = new EventEmitter();
 
@@ -30,7 +31,7 @@ export class SearchComponent implements OnInit {
     let selectedOption;
     this.searchOptions.forEach(option => {
       if (option.selected) {
-       selectedOption  = option.value;
+        selectedOption = option.value;
       }
     });
     return selectedOption;

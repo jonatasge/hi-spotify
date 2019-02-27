@@ -1,6 +1,10 @@
+// ANUGLAR
 import { Component } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+// SERVICES
+import { SpotifyService } from './services/spotify/spotify.service';
+// INTERFACES
 import { Select } from './interfaces/select.interface';
-import { SpotifyService } from './services/spotify.service';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +19,16 @@ export class AppComponent {
     { value: 'album', label: 'Álbum' },
     { value: 'track', label: 'Faixa', selected: true }
   ];
+  searchResults: any;
 
   searchSubmit(response: any) {
-    this.apiService.search(response);
+    this.apiService.search(response).subscribe(
+      (result: any) => {
+        this.searchResults = result;
+      },
+      (error: HttpErrorResponse) => {
+        this.apiService.handleError(error, response);
+      }
+    );
   }
 }

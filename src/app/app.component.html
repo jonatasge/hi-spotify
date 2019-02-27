@@ -1,3 +1,7 @@
-<app-search [searchOptions]="searchOptions" (searchSubmit)="searchSubmit($event)"></app-search>
+<app-search
+  [searchOptions]="searchOptions"
+  (searchSubmit)="searchSubmit($event)"
+  [searchResults]="searchResults"
+></app-search>
 
 <router-outlet></router-outlet>
