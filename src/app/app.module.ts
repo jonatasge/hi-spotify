@@ -26,6 +26,9 @@ import { BgAnimationComponent } from './components/bg-animation/bg-animation.com
 import { SearchComponent } from './components/search/search.component';
 // SERVICES
 import { SpotifyService } from './services/spotify.service';
+import { HelpService } from './services/helpers/help.service';
+import { ObjectService } from './services/helpers/object.service';
+import { UrlService } from './services/helpers/url.service';
 
 @NgModule({
   declarations: [AppComponent, SearchComponent, BgAnimationComponent],
@@ -39,7 +42,10 @@ import { SpotifyService } from './services/spotify.service';
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ConfigModule.forRoot(environment)
+    ConfigModule.forRoot(environment),
+    HelpService,
+    ObjectService,
+    UrlService
   ],
   providers: [SpotifyService],
   bootstrap: [AppComponent]
