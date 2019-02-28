@@ -1,18 +1,5 @@
 @import "variables";
 
-app-bg-animation {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.logo {
-  margin-bottom: 40px;
-  width: 220px;
-}
-
 .content-search-fields {
   border-radius: 100px;
   padding: 0 7px 0 0;
@@ -36,11 +23,23 @@ app-bg-animation {
     .custom-mat-form-field input {
       height: 38px;
 
-      @media screen and (min-width: $min-xsmall-4) {
+      @media screen and (min-width: $min-xsmall) {
+        width: 100px;
+      }
+
+      @media screen and (min-width: $min-xsmall-3) {
+        width: 130px;
+      }
+
+      @media screen and (min-width: $max-xsmall-3) {
+        width: 190px;
+      }
+
+      @media screen and (min-width: $min-small) {
         width: 300px;
       }
 
-      @media screen and (min-width: $min-small-2) {
+      @media screen and (min-width: $min-small-3) {
         width: 500px;
       }
     }

@@ -1,6 +1,8 @@
 // ANGULAR
 import { Injectable, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 // SERVICES
 import { SpotifyConfigService } from './spotify-config.service';
 import { HelpService } from '@services/helpers/help.service';
@@ -9,7 +11,8 @@ import { HelpService } from '@services/helpers/help.service';
 export class SpotifyAuthenticateService implements OnInit {
   constructor(
     private apiConfig: SpotifyConfigService,
-    private help: HelpService
+    private help: HelpService,
+    private router: Router
   ) {}
 
   config = this.apiConfig.config;
@@ -30,7 +33,7 @@ export class SpotifyAuthenticateService implements OnInit {
 
     localStorage.setItem('get_new_token', 'true');
 
-    // window.location.href = this.help.url.mountURL(scheme, query, parameters);
+    window.location.href = this.help.url.mountURL(scheme, query, parameters);
   }
 
   handleError(error: HttpErrorResponse) {

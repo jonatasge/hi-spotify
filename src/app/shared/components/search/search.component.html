@@ -1,0 +1,38 @@
+<form [method]="method" (ngSubmit)="submitForm()" [formGroup]="searchForm">
+  <mat-card class="content-search-fields">
+    <div class="custom-select">
+      <mat-form-field class="custom-mat-form-field">
+        <mat-select
+          id="searchType"
+          name="searchType"
+          formControlName="searchType"
+        >
+          <mat-option
+            *ngFor="let option of searchOptions"
+            [value]="option.value"
+          >
+            {{ option.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="custom-input">
+      <mat-form-field class="custom-mat-form-field">
+        <input
+          matInput
+          id="searchText"
+          name="searchText"
+          formControlName="searchText"
+          autofocus
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="custom-button">
+      <button mat-button type="submit">
+        <i class="material-icons">search</i>
+      </button>
+    </div>
+  </mat-card>
+</form>

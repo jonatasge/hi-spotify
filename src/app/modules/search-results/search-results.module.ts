@@ -10,29 +10,33 @@ import {
   MatOptionModule,
   MatSelectModule,
   MatCardModule,
-  MatButtonModule
+  MatButtonModule,
+  MatGridListModule,
+  MatListModule
 } from '@angular/material';
 
 // MODULES
-import { SearchRoutingModule } from './search-home-routing.module';
-import { SharedModule } from '@shared/shared.module';
+import { ResultsRoutingModule } from './search-results-routing.module';
+import { SharedModule } from '../../shared/shared.module';
 
 // COMPONENTS
-import { SearchHomeComponent } from './search-home.component';
+import { SearchResultComponent } from './search-results.component';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SearchRoutingModule,
+    ResultsRoutingModule,
     MatFormFieldModule,
     MatInputModule,
     MatOptionModule,
     MatSelectModule,
     MatCardModule,
     MatButtonModule,
+    MatGridListModule,
+    MatListModule,
     SharedModule
   ],
-  declarations: [SearchHomeComponent]
+  declarations: [SearchResultComponent]
 })
-export class SearchHomeModule {}
+export class SearchResultsModule {}

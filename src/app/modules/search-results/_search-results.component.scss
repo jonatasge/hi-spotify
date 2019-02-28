@@ -1,0 +1,22 @@
+@import "variables";
+
+:host {
+  background-color: $results-bg-color;
+  display: block;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+app-toolbar {
+  align-items: center;
+  background-color: $results-toolbar-bg-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .logo {
+    height: 39px;
+    margin-right: 20px;
+    width: 39px;
+  }
+}

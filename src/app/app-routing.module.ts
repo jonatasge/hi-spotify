@@ -15,6 +15,14 @@ const routes: Routes = [
     data: {
       title: 'Searh'
     }
+  },
+  {
+    path: 'results',
+    component: AppComponent,
+    loadChildren: './modules/search-results/search-results.module#SearchResultsModule',
+    data: {
+      title: 'Results'
+    }
   }
 ];
 

@@ -1,6 +1,8 @@
+// ANGULAR
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+// INTERFACES
 import { Select } from '@interfaces/select.interface';
 
 @Component({
@@ -13,6 +15,7 @@ export class SearchComponent implements OnInit {
 
   @Input() searchOptions?: Select[];
   @Input() searchResults?: any;
+  @Input() method = 'GET';
   searchForm: FormGroup;
   @Output() searchSubmit = new EventEmitter();
 
@@ -38,21 +41,7 @@ export class SearchComponent implements OnInit {
   }
 
   submitForm() {
+    debugger;
     this.searchSubmit.emit(this.searchForm.value);
-  }
-
-  showResult() {
-    if (this.searchResults instanceof Array) {
-      return this.searchResults;
-    } else if (this.searchResults) {
-      console.log(this.searchResults);
-      if (this.searchResults.artists) {
-        return this.searchResults.artists.items;
-      } else if (this.searchResults.albums) {
-        return this.searchResults.albums.items;
-      } else if (this.searchResults.tracks) {
-        return this.searchResults.tracks.items;
-      }
-    }
   }
 }

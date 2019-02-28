@@ -8,7 +8,8 @@
       "@services/*": ["src/app/services/*"],
       "@components/*": ["src/app/shared/components/*"],
       "@config/*": ["src/assets/config/*"],
-      "@environments/*": ["src/environments/*"]
+      "@environments/*": ["src/environments/*"],
+      "@shared/*": ["src/app/shared/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

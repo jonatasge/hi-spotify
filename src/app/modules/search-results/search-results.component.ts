@@ -1,36 +1,36 @@
 // ANGULAR
 import { Component } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
-
 // SERVICES
 import { SpotifyService } from '@services/spotify/spotify.service';
-
 // INTERFACES
 import { Select } from '@interfaces/select.interface';
 
 @Component({
-  selector: 'app-search-home',
-  styleUrls: ['./_search-home.component.scss'],
-  templateUrl: './search-home.component.html'
+  selector: 'app-search-results',
+  styleUrls: [
+    '../../shared/components/toolbar/_toolbar.component.scss',
+    './_search-results.component.scss'
+  ],
+  templateUrl: './search-results.component.html'
 })
-export class SearchHomeComponent {
-  constructor(private apiService: SpotifyService, private router: Router) {}
+export class SearchResultComponent {
+  constructor(private apiService: SpotifyService) {}
 
   searchOptions: Select[] = [
     { value: 'artist', label: 'Artista' },
     { value: 'album', label: 'Álbum' },
     { value: 'track', label: 'Faixa', selected: true }
   ];
+  searchResults: any;
 
-  searchSubmit(dataSearch: any) {
-    this.apiService.search(dataSearch).subscribe(
+  searchSubmit(response: any) {
+    this.apiService.search(response).subscribe(
       (result: any) => {
-        debugger;
-        this.router.navigate(['/results']);
+        this.searchResults = result;
       },
       (error: HttpErrorResponse) => {
-        this.apiService.handleError(error, dataSearch);
+        this.apiService.handleError(error, response);
       }
     );
   }
