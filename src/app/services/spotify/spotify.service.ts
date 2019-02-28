@@ -11,9 +11,9 @@ import { MatSnackBar } from '@angular/material';
 import { Observable } from 'rxjs';
 // SERVICES
 import { SpotifyAuthenticateService } from './spotify-authenticate.service';
-import { HelpService } from '../helpers/help.service';
+import { HelpService } from '@services/helpers/help.service';
 // INTERFACES
-import { Config } from '../../interfaces/config.interface';
+import { Config } from '@interfaces/config.interface';
 
 @Injectable()
 export class SpotifyService implements OnInit {
@@ -52,7 +52,7 @@ export class SpotifyService implements OnInit {
   handleError(error: HttpErrorResponse, dataSearch?: object) {
     localStorage.setItem('continue_searching', JSON.stringify(dataSearch));
     this.authenticate.handleError(error);
-    this.snackbar.open('Something bad happened; please try again later.', 'OK');
+    this.snackbar.open('Parece que algo deu errado. Por favor, tente novamente mais tarde.', 'OK');
   }
 
   search(dataSearch: object): Observable<object> {

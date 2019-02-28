@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { Select } from '../../interfaces/select.interface';
+import { Select } from '@interfaces/select.interface';
 
 @Component({
   selector: 'app-search',
@@ -39,5 +39,20 @@ export class SearchComponent implements OnInit {
 
   submitForm() {
     this.searchSubmit.emit(this.searchForm.value);
+  }
+
+  showResult() {
+    if (this.searchResults instanceof Array) {
+      return this.searchResults;
+    } else if (this.searchResults) {
+      console.log(this.searchResults);
+      if (this.searchResults.artists) {
+        return this.searchResults.artists.items;
+      } else if (this.searchResults.albums) {
+        return this.searchResults.albums.items;
+      } else if (this.searchResults.tracks) {
+        return this.searchResults.tracks.items;
+      }
+    }
   }
 }

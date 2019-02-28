@@ -3,7 +3,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 // SERVICES
 import { SpotifyConfigService } from './spotify-config.service';
-import { HelpService } from '../helpers/help.service';
+import { HelpService } from '@services/helpers/help.service';
 
 @Injectable()
 export class SpotifyAuthenticateService implements OnInit {
@@ -30,7 +30,7 @@ export class SpotifyAuthenticateService implements OnInit {
 
     localStorage.setItem('get_new_token', 'true');
 
-    window.location.href = this.help.url.mountURL(scheme, query, parameters);
+    // window.location.href = this.help.url.mountURL(scheme, query, parameters);
   }
 
   handleError(error: HttpErrorResponse) {

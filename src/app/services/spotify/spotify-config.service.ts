@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 // VENDOR
 import { ConfigService } from 'ngx-envconfig';
 // INTERFACES
-import { Config } from '../../interfaces/config.interface';
+import { Config } from '@interfaces/config.interface';
 
 @Injectable()
 export class SpotifyConfigService {

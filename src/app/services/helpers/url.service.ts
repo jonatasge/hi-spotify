@@ -1,8 +1,8 @@
 // ANGULAR
 import { Injectable } from '@angular/core';
 // INTERFACES
-import { EndpointQuery } from '../../interfaces/endpoint-query.interface';
-import { SpotifyConfigService } from '../spotify/spotify-config.service';
+import { EndpointQuery } from '@interfaces/endpoint-query.interface';
+import { SpotifyConfigService } from '@services/spotify/spotify-config.service';
 
 @Injectable()
 export class UrlService {
