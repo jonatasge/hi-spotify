@@ -7,8 +7,8 @@ import { Select } from '@interfaces/select.interface';
 
 @Component({
   selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./_search.component.scss'],
+  templateUrl: './search.component.html'
 })
 export class SearchComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}

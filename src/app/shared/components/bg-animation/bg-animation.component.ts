@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-bg-animation',
-  styleUrls: ['./bg-animation.component.scss'],
+  styleUrls: ['./_bg-animation.component.scss'],
   template: `
     <ng-content></ng-content>
   `
