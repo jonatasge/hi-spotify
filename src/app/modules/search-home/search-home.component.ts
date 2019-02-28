@@ -24,14 +24,14 @@ export class SearchHomeComponent {
   ];
 
   searchSubmit(dataSearch: any) {
-    this.apiService.search(dataSearch).subscribe(
-      (result: any) => {
-        debugger;
-        this.router.navigate(['/results']);
-      },
-      (error: HttpErrorResponse) => {
-        this.apiService.handleError(error, dataSearch);
-      }
-    );
+    this.router.navigate(['/results'], { queryParams: dataSearch, skipLocationChange: true });
+    // this.apiService.search(dataSearch).subscribe(
+    //   (result: any) => {
+    //     this.router.navigate(['/results']);
+    //   },
+    //   (error: HttpErrorResponse) => {
+    //     this.apiService.handleError(error, dataSearch);
+    //   }
+    // );
   }
 }

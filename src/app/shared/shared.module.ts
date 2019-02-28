@@ -1,6 +1,7 @@
 // ANGULAR
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // ANGULAR MATERIAL
 import {
@@ -22,6 +23,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatOptionModule,

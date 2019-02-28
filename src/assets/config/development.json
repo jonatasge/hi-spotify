@@ -29,7 +29,7 @@
             "include_external": false,
             "limit": {
               "required": false,
-              "value": 10
+              "value": 25
             },
             "market": false,
             "offset": false,

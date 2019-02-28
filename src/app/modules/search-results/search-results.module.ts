@@ -12,7 +12,8 @@ import {
   MatCardModule,
   MatButtonModule,
   MatGridListModule,
-  MatListModule
+  MatListModule,
+  MatIconModule
 } from '@angular/material';
 
 // MODULES
@@ -35,6 +36,7 @@ import { SearchResultComponent } from './search-results.component';
     MatButtonModule,
     MatGridListModule,
     MatListModule,
+    MatIconModule,
     SharedModule
   ],
   declarations: [SearchResultComponent]

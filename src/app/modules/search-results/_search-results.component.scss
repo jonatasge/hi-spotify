@@ -4,19 +4,106 @@
   background-color: $results-bg-color;
   display: block;
   min-height: 100vh;
-  width: 100vw;
-}
+  width: 100%;
 
-app-toolbar {
-  align-items: center;
-  background-color: $results-toolbar-bg-color;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  app-toolbar {
+    align-items: center;
+    background-color: $results-toolbar-bg-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-  .logo {
-    height: 39px;
-    margin-right: 20px;
-    width: 39px;
+    .logo {
+      height: 50px;
+      margin-right: 20px;
+      width: 50px;
+
+      @media screen and (max-width: 359px) {
+        display: none;
+      }
+
+      @media screen and (min-width: $max-small) {
+        width: 166px;
+      }
+    }
+  }
+
+  .container {
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+
+    @media screen and (min-width: $min-xsmall-3) {
+      width: 380px;
+    }
+
+    @media screen and (min-width: $max-xsmall-3) {
+      width: 430px;
+    }
+
+    @media screen and (min-width: $min-small) {
+      width: 540px;
+    }
+
+    @media screen and (min-width: $max-small) {
+      width: 650px;
+    }
+
+    @media screen and (min-width: $min-small-4) {
+      width: 850px;
+    }
+
+    mat-card {
+      background-color: $results-toolbar-bg-color;
+      color: white;
+
+      & + mat-card {
+        margin-top: 10px;
+      }
+
+      .list-image {
+        height: 100px;
+        width: 100px;
+
+        &.circle {
+          border-radius: 100%;
+        }
+
+        @media screen and (max-width: $min-small) {
+          height: 50px;
+          width: 50px;
+        }
+      }
+
+      .list-text {
+        text-transform: capitalize;
+        width: 100%;
+
+        @media screen and (max-width: $min-small) {
+          h3 {
+            font-size: 15px;
+            margin: 0 0 5px 0;
+          }
+
+          p {
+            font-size: 12px;
+            margin: 0;
+          }
+        }
+      }
+
+      .list-popularity {
+        float: right;
+
+        @media screen and (max-width: $min-small) {
+          font-size: 10px;
+        }
+      }
+      @media screen and (max-width: $min-small) {
+        h1 {
+          font-size: 22px;
+        }
+      }
+    }
   }
 }

@@ -34,6 +34,11 @@ export class SpotifyService implements OnInit {
 
   config: Config = {};
   httpOptions = {};
+  searchOptions = [
+    { value: 'artist', label: 'Artista' },
+    { value: 'album', label: 'Álbum' },
+    { value: 'track', label: 'Faixa', selected: true }
+  ];
 
   ngOnInit() {
     const dataSearch = JSON.parse(localStorage.getItem('continue_searching'));

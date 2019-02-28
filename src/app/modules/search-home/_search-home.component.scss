@@ -6,6 +6,7 @@ app-bg-animation {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  min-width: $min-screen-width;
 }
 
 .logo {

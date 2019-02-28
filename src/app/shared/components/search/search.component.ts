@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   @Input() searchOptions?: Select[];
-  @Input() searchResults?: any;
+  @Input() searchText = '';
   @Input() method = 'GET';
   searchForm: FormGroup;
   @Output() searchSubmit = new EventEmitter();
@@ -26,7 +26,7 @@ export class SearchComponent implements OnInit {
   configForm() {
     this.searchForm = this.formBuilder.group({
       searchType: [this.getSelectedOption(), Validators.required],
-      searchText: [null, Validators.required]
+      searchText: [this.searchText, Validators.required]
     });
   }
 
@@ -41,7 +41,6 @@ export class SearchComponent implements OnInit {
   }
 
   submitForm() {
-    debugger;
     this.searchSubmit.emit(this.searchForm.value);
   }
 }
