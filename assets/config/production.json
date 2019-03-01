@@ -12,7 +12,7 @@
             "client_id": true,
             "redirect_uri": {
               "required": true,
-              "value": "http://localhost:4200/"
+              "value": "https://jonatasgev.github.io/hi-spotify/"
             },
             "response_type": {
               "required": true,
