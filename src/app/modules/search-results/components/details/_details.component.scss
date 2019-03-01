@@ -1,0 +1,55 @@
+@import "variables";
+
+.list-image {
+  height: 100px;
+  width: 100px;
+
+  &.circle {
+    border-radius: 100%;
+  }
+
+  @media screen and (max-width: $min-small) {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.list-text {
+  text-transform: capitalize;
+  width: 100%;
+  @media screen and (max-width: $min-small) {
+    h3 {
+      font-size: 15px;
+      margin: 0 0 5px 0;
+    }
+
+    p {
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+}
+
+.list-popularity {
+  float: right;
+
+  @media screen and (max-width: $min-small) {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: $min-small) {
+  h1 {
+    font-size: 22px;
+  }
+}
+
+.header-list-item {
+  border-bottom: 1px solid #dddddd;
+}
+
+*[mat-list-item] {
+  + *[mat-list-item] {
+    margin-top: 10px;
+  }
+}

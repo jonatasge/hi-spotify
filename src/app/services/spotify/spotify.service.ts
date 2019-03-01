@@ -23,7 +23,6 @@ export class SpotifyService implements OnInit {
     private help: HelpService,
     private snackbar: MatSnackBar
   ) {
-
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -44,8 +43,7 @@ export class SpotifyService implements OnInit {
     const dataSearch = JSON.parse(localStorage.getItem('continue_searching'));
 
     if (dataSearch) {
-      this.search(dataSearch)
-      .subscribe(
+      this.search(dataSearch).subscribe(
         r => console.log(r),
         (error: HttpErrorResponse) => {
           this.handleError(error, dataSearch);
@@ -57,11 +55,15 @@ export class SpotifyService implements OnInit {
   handleError(error: HttpErrorResponse, dataSearch?: object) {
     localStorage.setItem('continue_searching', JSON.stringify(dataSearch));
     this.authenticate.handleError(error);
-    this.snackbar.open('Parece que algo deu errado. Por favor, tente novamente mais tarde.', 'OK');
+    this.snackbar.open(
+      'Parece que algo deu errado. Por favor, tente novamente mais tarde.',
+      'OK'
+    );
   }
 
   search(dataSearch: object): Observable<object> {
-    const config = this.authenticate.config.API_ENDPOINTS['SPOTIFY'].query.search;
+    const config = this.authenticate.config.API_ENDPOINTS['SPOTIFY'].query
+      .search;
     const search = this.help.obj.clone(config);
 
     const parameters = search['parameters'];
@@ -72,5 +74,43 @@ export class SpotifyService implements OnInit {
       this.help.url.mountURL(config, search, parameters),
       this.httpOptions
     );
+  }
+
+  getArtistAlbums(id: string) {
+    const config = this.authenticate.config.API_ENDPOINTS['SPOTIFY'].query.get_artist_albums;
+    const getArtistAlbums = this.help.obj.clone(config);
+
+    const parameters = getArtistAlbums['parameters'];
+    parameters.id = {
+      type: 'path',
+      value: id
+    };
+
+    return this.http.get(
+      this.help.url.mountURL(config, getArtistAlbums, parameters),
+      this.httpOptions
+    );
+  }
+
+  getAlbumTracks(id: string) {
+    const config = this.authenticate.config.API_ENDPOINTS['SPOTIFY'].query.get_album_tracks;
+    const getAlbumTracks = this.help.obj.clone(config);
+
+    const parameters = getAlbumTracks['parameters'];
+    parameters.id = {
+      type: 'path',
+      value: id
+    };
+
+    return this.http.get(
+      this.help.url.mountURL(config, getAlbumTracks, parameters),
+      this.httpOptions
+    );
+  }
+
+  getDuration(durationMs: number): string {
+    const minutes = Math.floor(durationMs / 60000);
+    const seconds = parseInt(((durationMs % 60000) / 1000).toFixed(0));
+    return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
   }
 }

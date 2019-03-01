@@ -13,7 +13,8 @@ import {
   MatButtonModule,
   MatGridListModule,
   MatListModule,
-  MatIconModule
+  MatIconModule,
+  MatBottomSheetModule
 } from '@angular/material';
 
 // MODULES
@@ -22,6 +23,7 @@ import { SharedModule } from '../../shared/shared.module';
 
 // COMPONENTS
 import { SearchResultComponent } from './search-results.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   imports: [
@@ -37,8 +39,10 @@ import { SearchResultComponent } from './search-results.component';
     MatGridListModule,
     MatListModule,
     MatIconModule,
+    MatBottomSheetModule,
     SharedModule
   ],
-  declarations: [SearchResultComponent]
+  entryComponents: [DetailsComponent],
+  declarations: [SearchResultComponent, DetailsComponent]
 })
 export class SearchResultsModule {}

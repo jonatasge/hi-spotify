@@ -25,10 +25,17 @@ export class UrlService {
         this.parameterIsRequired(scheme.parameters, parameter) &&
         !this.parameterIsValid(query.parameters, parameter)
       ) {
-        if (query.parameters[parameter].value) {
-          parameters[parameter] = encodeURIComponent(
-            query.parameters[parameter].value
-          );
+        if (query.parameters[parameter] || (query.parameters[parameter] && query.parameters[parameter].value)) {
+          if (query.parameters[parameter].type !== 'path') {
+            parameters[parameter] = encodeURIComponent(
+              query.parameters[parameter].value
+            );
+          } else {
+            parameters[parameter].type = 'path';
+            parameters[parameter].value = encodeURIComponent(
+              query.parameters[parameter].value
+            );
+          }
         } else {
           console.error('Parameter "' + parameter + '" is required.');
           parameters[parameter] = '';
@@ -47,14 +54,23 @@ export class UrlService {
               break;
           }
 
-          parameters[parameter] = encodeURIComponent(paramet);
+          if (parameters[parameter].type !== 'path') {
+            parameters[parameter] = encodeURIComponent(paramet);
+          } else {
+            parameters[parameter].value = encodeURIComponent(paramet);
+          }
         } else {
           parameters[parameter] = '';
         }
       }
 
-      if (parameters[parameter] !== '') {
+      if (
+        !(parameters[parameter] instanceof Object) &&
+        parameters[parameter] !== ''
+      ) {
         url += '&' + parameter + '=' + parameters[parameter];
+      } else if (parameters[parameter].type === 'path') {
+        url = url.replace('{' + parameter + '}', parameters[parameter].value);
       }
     });
 

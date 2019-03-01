@@ -3,11 +3,17 @@ import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
+// ANGULAR MATERIAL
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material';
+
 // SERVICES
 import { SpotifyService } from '@services/spotify/spotify.service';
 
 // INTERFACES
 import { Select } from '@interfaces/select.interface';
+
+// COMPONENTS
+import { DetailsComponent } from './components/details/details.component';
 
 @Component({
   selector: 'app-search-results',
@@ -20,7 +26,8 @@ import { Select } from '@interfaces/select.interface';
 export class SearchResultComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
-    private apiService: SpotifyService
+    private apiService: SpotifyService,
+    private bottomSheet: MatBottomSheet
   ) {}
 
   searchOptions: Select[] = this.apiService.searchOptions;
@@ -92,5 +99,23 @@ export class SearchResultComponent implements OnInit {
     const minutes = Math.floor(durationMs / 60000);
     const seconds = parseInt(((durationMs % 60000) / 1000).toFixed(0));
     return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+  }
+
+  openDetails(id?: string, type?: string) {
+    const item = this.findItem(this.searchResults, { id });
+    this.bottomSheet.open(DetailsComponent, { data: { item, id, type } });
+  }
+
+  findItem(arr: Array<any>, parameter: object) {
+    let response;
+    const key = Object.keys(parameter)[0];
+
+    arr.forEach(item => {
+      if (item[key] === parameter[key]) {
+        response = item;
+      }
+    });
+
+    return response;
   }
 }

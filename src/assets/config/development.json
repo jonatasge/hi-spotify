@@ -36,6 +36,38 @@
             "q": true,
             "type": true
           }
+        },
+        "get_artist_albums": {
+          "path": "/v1/artists/{id}/albums",
+          "parameters": {
+            "id": {
+              "type": "path",
+              "reqired": true
+            },
+            "include_groups": false,
+            "market": false,
+            "limit": {
+              "required": false,
+              "value": 5
+            },
+            "offset": false
+          }
+        },
+        "get_album_tracks": {
+          "path": "/v1/albums/{id}/tracks",
+          "parameters": {
+            "id": {
+              "type": "path",
+              "reqired": true
+            },
+            "include_groups": false,
+            "market": false,
+            "limit": {
+              "required": false,
+              "value": 50
+            },
+            "offset": false
+          }
         }
       }
     }
