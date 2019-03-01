@@ -1,0 +1,98 @@
+<app-toolbar>
+  <a [routerLink]="['/']" routerLinkActive="active">
+    <app-logo class="logo"></app-logo>
+  </a>
+
+  <app-search
+    [searchOptions]="searchOptions"
+    [searchText]="searchText"
+    (searchSubmit)="searchSubmit($event)"
+  >
+  </app-search>
+</app-toolbar>
+
+<div class="container" [ngSwitch]="true">
+  <ng-container *ngSwitchCase="searchResults.length && searchResults[0] !== ''">
+    <mat-card *ngFor="let item of searchResults" [ngSwitch]="selectedOption">
+      <mat-grid-list *ngSwitchCase="'artist'" cols="4" rowHeight="100px" (click)="openDetails(item.id, selectedOption)">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <img
+            class="list-image circle"
+            [src]="
+              item.images[0] ? item.images[0].url : '/assets/images/artist.png'
+            "
+          />
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <div class="list-text">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.genres.join(", ") }}</p>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <h4 mat-list-icon class="list-popularity" [ngClass]="popularity">
+            {{ getPopularityText(item.popularity) }}
+          </h4>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list *ngSwitchCase="'album'" cols="4" rowHeight="100px" (click)="openDetails(item.id, selectedOption)">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <img
+            class="list-image"
+            [src]="
+              item.images[0] ? item.images[0].url : '/assets/images/album.png'
+            "
+          />
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <div class="list-text">
+            <h3>{{ item.name }}</h3>
+            <p>{{ getArtists(item.artists) }}</p>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          {{
+            item.available_markets.includes("BR")
+              ? "Disponível"
+              : "Indisponível no seu país"
+          }}
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list *ngSwitchCase="'track'" cols="4" rowHeight="150px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <img
+            class="list-image"
+            [src]="
+              item.album.images[0]
+                ? item.album.images[0].url
+                : '/assets/images/album.png'
+            "
+          />
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <div class="list-text">
+            <h3>{{ item.name }}</h3>
+            <p><b>Artista:</b> {{ getArtists(item.artists, false) }}</p>
+            <p><b>Álbum:</b> {{ item.album.name }}</p>
+            <p><b>Duração:</b> {{ getDuration(item.duration_ms) }}</p>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card>
+  </ng-container>
+
+  <mat-card *ngSwitchCase="searchResults[0] === ''">
+    <h1>Procurando...</h1>
+  </mat-card>
+
+  <mat-card *ngSwitchDefault>
+    <h1>Sem correspondências.</h1>
+  </mat-card>
+</div>

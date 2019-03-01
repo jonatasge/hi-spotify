@@ -1,0 +1,57 @@
+:host {
+  background: radial-gradient(circle, #1ed760, #1ed760, #00aaff);
+  background-size: 1000% 1000%;
+  display: inline-block;
+  height: auto;
+  width: 100vw;
+
+  -webkit-animation: bgAnimation 60s ease-in-out infinite;
+  -moz-animation: bgAnimation 60s ease-in-out infinite;
+  -o-animation: bgAnimation 60s ease-in-out infinite;
+  animation: bgAnimation 60s ease-in-out infinite;
+}
+
+@-webkit-keyframes bgAnimation {
+  25% {
+    background-position: 0 100%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 100% 0;
+  }
+}
+@-moz-keyframes bgAnimation {
+  25% {
+    background-position: 0 100%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 100% 0;
+  }
+}
+@-o-keyframes bgAnimation {
+  25% {
+    background-position: 0 100%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 100% 0;
+  }
+}
+@keyframes bgAnimation {
+  25% {
+    background-position: 0 100%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 100% 0;
+  }
+}

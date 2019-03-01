@@ -1,0 +1,59 @@
+@import "variables";
+
+.content-search-fields {
+  border-radius: 100px;
+  padding: 0 7px 0 0;
+  overflow: hidden;
+
+  .custom-select {
+    background-color: #f0f0f0;
+    color: #ffffff !important;
+    float: left;
+    padding: 10px 5px 10px 15px;
+
+    .custom-mat-form-field {
+      width: 70px;
+    }
+  }
+
+  .custom-input {
+    float: left;
+    margin-left: 10px;
+
+    .custom-mat-form-field input {
+      height: 38px;
+
+      @media screen and (min-width: $min-xsmall) {
+        width: 100px;
+      }
+
+      @media screen and (min-width: $min-xsmall-3) {
+        width: 130px;
+      }
+
+      @media screen and (min-width: $max-xsmall-3) {
+        width: 190px;
+      }
+
+      @media screen and (min-width: $min-small) {
+        width: 300px;
+      }
+
+      @media screen and (min-width: $min-small-4) {
+        width: 500px;
+      }
+    }
+  }
+
+  .custom-button {
+    float: left;
+    padding: 5px 0;
+
+    button {
+      border-radius: 100%;
+      height: 40px;
+      min-width: 40px;
+      padding: 0 0 2px 2px;
+    }
+  }
+}

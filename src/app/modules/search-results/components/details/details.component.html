@@ -1,0 +1,130 @@
+<mat-nav-list [ngSwitch]="true">
+  <!-- HEADER -->
+  <div
+    mat-list-item
+    *ngIf="data.type === 'artist'; else albumHeader"
+    class="header-list-item"
+  >
+    <mat-grid-list cols="4" rowHeight="100px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <img
+          class="list-image circle"
+          [src]="
+            data.item.images[0]
+              ? data.item.images[0].url
+              : '/assets/images/artist.png'
+          "
+        />
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <div class="list-text">
+          <h3>{{ data.item.name }}</h3>
+          <p>{{ data.item.genres.join(", ") }}</p>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <h4 mat-list-icon class="list-popularity" [ngClass]="popularity">
+          {{ getPopularityText(data.item.popularity) }}
+        </h4>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <ng-template #albumHeader>
+    <div mat-list-item class="header-list-item">
+      <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <img
+            class="list-image"
+            [src]="
+              data.item.images[0] ? data.item.images[0].url : '/assets/images/album.png'
+            "
+          />
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <div class="list-text">
+            <h3>{{ data.item.name }}</h3>
+            <p>{{ getArtists(data.item.artists) }}</p>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          {{
+            data.item.available_markets.includes("BR")
+              ? "Disponível"
+              : "Indisponível no seu país"
+          }}
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </ng-template>
+
+  <!-- LIST -->
+  <ng-container *ngSwitchCase="items.length && items[0] !== ''">
+    <div mat-list-item *ngIf="data.type === 'artist'; else albumList">
+      <div mat-list-item *ngFor="let item of items">
+        <mat-grid-list cols="4" rowHeight="100px">
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <img
+              class="list-image"
+              [src]="
+                item.images[0] ? item.images[0].url : '/assets/images/album.png'
+              "
+            />
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <div class="list-text">
+              <h3>{{ item.name }}</h3>
+              <p>{{ getArtists(item.artists) }}</p>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            {{
+              item.available_markets.includes("BR")
+                ? "Disponível"
+                : "Indisponível no seu país"
+            }}
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+
+    <ng-template #albumList>
+      <div mat-list-item *ngFor="let item of items">
+        <mat-grid-list cols="4" rowHeight="100px">
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-icon mat-list-icon>music_note</mat-icon>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="3" [rowspan]="1">
+            <div class="list-text">
+              <h3>{{ item.name }}</h3>
+              <p><b>Artista:</b> {{ getArtists(item.artists, false) }}</p>
+              <p><b>Duração:</b> {{ getDuration(item.duration_ms) }}</p>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </ng-template>
+  </ng-container>
+
+  <!-- MESSAGES -->
+  <div mat-list-item *ngSwitchCase="items[0] === ''">
+    <h4>Carregando...</h4>
+  </div>
+
+  <div mat-list-item *ngSwitchDefault>
+    <ng-container *ngIf="data.type === 'artist'; else messageNotFoundAlbum">
+      <h4>Nenhum álbum encontrado para este artista.</h4>
+    </ng-container>
+
+    <ng-template #messageNotFoundAlbum>
+      <h4>Nenhuma música encontrada para este álbum.</h4>
+    </ng-template>
+  </div>
+</mat-nav-list>

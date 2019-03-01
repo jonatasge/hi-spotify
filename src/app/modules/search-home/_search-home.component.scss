@@ -1,0 +1,16 @@
+@import "variables";
+
+app-bg-animation {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: $min-screen-width;
+}
+
+.logo {
+  margin-bottom: 40px;
+  height: 66px;
+  width: 220px;
+}
