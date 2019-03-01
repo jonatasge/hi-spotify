@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.js",
-    "build": "ng build",
+    "build": "ng build --configuration=production --prod --base-href https://jonatasgev.github.io/hi-spotify/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
