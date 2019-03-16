@@ -12,7 +12,7 @@
             "client_id": true,
             "redirect_uri": {
               "required": true,
-              "value": "https://jonatasgev.github.io/hi-spotify/"
+              "value": "https://jonatasge.com.br/"
             },
             "response_type": {
               "required": true,
