@@ -1,9 +1,10 @@
 {
-  "name": "hi-spotify",
-  "short_name": "hi-spotify",
-  "theme_color": "#1976d2",
+  "name": "Spotify",
+  "short_name": "Spotify",
+  "theme_color": "#1ED760",
   "background_color": "#fafafa",
-  "display": "standalone",
+  "display": "fullscreen",
+  "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
   "icons": [

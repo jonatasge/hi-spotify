@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1552752519591,
+  "timestamp": 1552757531019,
   "index": "https://jonatasge.com.br/index.html",
   "assetGroups": [
     {
@@ -10,13 +10,13 @@
       "urls": [
         "https://jonatasge.com.br/1.d54c242e14c3c861aa78.js",
         "https://jonatasge.com.br/6.72d054756a179ae6968c.js",
-        "https://jonatasge.com.br/7.3ef29a92bdee01354b6c.js",
+        "https://jonatasge.com.br/7.4a46b4202c76cfb157b5.js",
         "https://jonatasge.com.br/es2015-polyfills.cf5c575b6ffb3f6bdfa6.js",
         "https://jonatasge.com.br/favicon.ico",
         "https://jonatasge.com.br/index.html",
         "https://jonatasge.com.br/main.eb48e8965fa261cf3f32.js",
         "https://jonatasge.com.br/polyfills.ca948757f51b36d0d532.js",
-        "https://jonatasge.com.br/runtime.3280fa944ead27d895dd.js",
+        "https://jonatasge.com.br/runtime.43d25d9aba31d6dbd937.js",
         "https://jonatasge.com.br/styles.d0a45d9e9efccedd2e0c.css"
       ],
       "patterns": []
@@ -121,7 +121,7 @@
   "hashTable": {
     "https://jonatasge.com.br/1.d54c242e14c3c861aa78.js": "f4f4d328f476413bf7151c9da7b8185cc4249bd4",
     "https://jonatasge.com.br/6.72d054756a179ae6968c.js": "99dc4985185f19e19ca5baa8f5673ded996abb11",
-    "https://jonatasge.com.br/7.3ef29a92bdee01354b6c.js": "8ddfcdf0d9ce1d5f9f8e2a7b392a934f54c6a54a",
+    "https://jonatasge.com.br/7.4a46b4202c76cfb157b5.js": "b15cf3e2e145a4db01b09aad117e3d30edef3e45",
     "https://jonatasge.com.br/assets/config/development.json": "577932ae680b358d4dee913975268b4800d7cf2a",
     "https://jonatasge.com.br/assets/config/production.json": "c1d35491b8a0887641c87b20cd3dfe79119911da",
     "https://jonatasge.com.br/assets/css/loading.css": "2349489554560623db41f3c609c2c02c6d7da180",
@@ -180,17 +180,17 @@
     "https://jonatasge.com.br/assets/fonts/opensans/SemiboldItalic/OpenSans-SemiboldItalic.ttf": "c6c3df76f9e4774e51eb59db6ea769835f0efb81",
     "https://jonatasge.com.br/assets/fonts/opensans/SemiboldItalic/OpenSans-SemiboldItalic.woff": "9406a2e087eb0d1790c2a7348b940f773ae6dda3",
     "https://jonatasge.com.br/assets/fonts/opensans/SemiboldItalic/OpenSans-SemiboldItalic.woff2": "e51180cddda569a91790c2dc4c352d06831bb07b",
-    "https://jonatasge.com.br/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "https://jonatasge.com.br/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "https://jonatasge.com.br/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "https://jonatasge.com.br/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "https://jonatasge.com.br/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "https://jonatasge.com.br/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "https://jonatasge.com.br/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "https://jonatasge.com.br/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://jonatasge.com.br/assets/icons/icon-128x128.png": "781641d9a74a252fdbd5b8e70d8dfd7a0b6ac907",
+    "https://jonatasge.com.br/assets/icons/icon-144x144.png": "a317713e8675e27a462c521da60dcccc91aaf2d3",
+    "https://jonatasge.com.br/assets/icons/icon-152x152.png": "b45eb710d8d194c4c3ee12ce3ef1dec9b272239b",
+    "https://jonatasge.com.br/assets/icons/icon-192x192.png": "0ee21ad6d49a6410e69060181a3d1f2f080827bf",
+    "https://jonatasge.com.br/assets/icons/icon-384x384.png": "42a95fc23bd3880f23124b1298f0a53b92431bcb",
+    "https://jonatasge.com.br/assets/icons/icon-512x512.png": "12c8587e1192918f9ff277f096267633fef617fe",
+    "https://jonatasge.com.br/assets/icons/icon-72x72.png": "d0090a68500db341ce7a05c430b37018bbfe0fe6",
+    "https://jonatasge.com.br/assets/icons/icon-96x96.png": "2f5f8e0a8d7130fb5833e02c25a103cd8dd07c8e",
     "https://jonatasge.com.br/assets/images/album.png": "eb3ac7188175cd6ba39eca8e46d259531fad7287",
     "https://jonatasge.com.br/assets/images/artist.png": "0d188deeeae76af4cd4949f1e8afa306b07c8dd9",
-    "https://jonatasge.com.br/assets/images/logo.png": "5aa98616c4f2e32a23663cac75e6410fe9d1d9ad",
+    "https://jonatasge.com.br/assets/images/logo.png": "a48ba8ba67ce1bea7569c40c42cecff66096a175",
     "https://jonatasge.com.br/assets/scss/_overwrite.scss": "a2f7a27a628be5f209d560be7746ce16993b8dce",
     "https://jonatasge.com.br/assets/scss/_variables.scss": "8df40d935457f9b0efe4718fb605fb9d1182b01c",
     "https://jonatasge.com.br/assets/scss/my-theme.scss": "119b5228c4e99b90668a94c3963dcdcfba7c2919",
@@ -198,10 +198,10 @@
     "https://jonatasge.com.br/es2015-polyfills.cf5c575b6ffb3f6bdfa6.js": "ddc4884f07efd3b0454e560ff8808c45a7fd49d0",
     "https://jonatasge.com.br/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
     "https://jonatasge.com.br/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.1750b32ed292c226aab4.woff2": "6bb0d8cecc8438110f6ea3d2f7fe4f71a193bd49",
-    "https://jonatasge.com.br/index.html": "316a47260f9b9aff51b2d4e9e69299fb5f6e266e",
+    "https://jonatasge.com.br/index.html": "b79d899fc8d08639a756123e8fb960c3cfce3f6b",
     "https://jonatasge.com.br/main.eb48e8965fa261cf3f32.js": "80c8222a5b679b2f88c37c43fede44cf24f5b922",
     "https://jonatasge.com.br/polyfills.ca948757f51b36d0d532.js": "ef448ddee57ecea8f1f0157e9e684b2c871e2e39",
-    "https://jonatasge.com.br/runtime.3280fa944ead27d895dd.js": "f62ed72ab1759042794d521cfeb0393711bf11b1",
+    "https://jonatasge.com.br/runtime.43d25d9aba31d6dbd937.js": "b57977d19c314d1802ca567eb53c3c125d24df45",
     "https://jonatasge.com.br/styles.d0a45d9e9efccedd2e0c.css": "ecb136befd4c57f089c7aab147627bb969136957"
   },
   "navigationUrls": [
