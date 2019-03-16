@@ -3,7 +3,7 @@
   "short_name": "Spotify",
   "theme_color": "#1ED760",
   "background_color": "#fafafa",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
