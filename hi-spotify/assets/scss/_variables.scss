@@ -1,0 +1,54 @@
+// Screen size
+$min-screen-height: 320px;
+$min-screen-width: 320px;
+
+// xsmall
+$min-xsmall: 0px;
+$max-xsmall: 359px;
+
+$min-xsmall-2: 360px;
+$max-xsmall-2: 399px;
+
+$min-xsmall-3: 400px;
+$max-xsmall-3: 479px;
+
+$min-xsmall-4: 480px;
+$max-xsmall-4: 599px;
+
+// small
+$min-small: 600px;
+$max-small: 719px;
+
+$min-small-2: 720px;
+$max-small-2: 839px;
+
+$min-small-3: 840px;
+$max-small-3: 959px;
+
+$min-small-4: 960px;
+$max-small-4: 1023px;
+
+// medium
+$min-medium: 1024px;
+$max-medium: 1279px;
+
+$min-medium-2: 1280px;
+$max-medium-2: 1439px;
+
+// large
+$min-large: 1440px;
+$max-large: 1599px;
+
+$min-larege-2: 1600px;
+$max-large-2: 1919px;
+
+// xlarge
+$min-xlarge: 1920px;
+$max-xlarge: 1920px;
+
+// LOGO
+$logo-url: "/assets/images/logo.png";
+
+// COLORS
+$results-bg-color: #181818;
+$results-toolbar-bg-color: #282828;
